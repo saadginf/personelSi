@@ -21,9 +21,15 @@ public class OccuperFonction {
     private FonctionSi fonctionSi;
     private Date dateDebut;
     private Date dateFin;
-    private boolean active;
+    private boolean active=true;
 
     
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
     public OccuperFonction() {
     }
     public Personnel getPersonnel() {
