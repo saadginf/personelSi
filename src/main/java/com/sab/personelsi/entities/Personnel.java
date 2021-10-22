@@ -1,7 +1,6 @@
 package com.sab.personelsi.entities;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Transient;
+
 import javax.validation.constraints.NotNull;
 
 
@@ -30,8 +29,9 @@ public class Personnel {
    private Organe organe;
    @NotNull(message = "Champ Obligatoire")
     private String fonction;
-    @Transient
-    private List<String> fonctionSiActuelle = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "ID_FONC")
+   private FonctionSi fonctions;
    private Boolean active=true;
    
     public Boolean getActive() {
@@ -46,18 +46,19 @@ public void setActive(Boolean active) {
     public void setId(Long id) {
         this.id = id;
     }
-    public List<String> getFonctionSiActuelle() {
-        return fonctionSiActuelle;
-    }
-    public void setFonctionSiActuelle(List<String> fonctionSiActuelle) {
-        this.fonctionSiActuelle = fonctionSiActuelle;
-    }
+   
     private String mail;
  
     private String tel;
 
 
     
+    public FonctionSi getFonctions() {
+        return fonctions;
+    }
+    public void setFonctions(FonctionSi fonctions) {
+        this.fonctions = fonctions;
+    }
     public Organe getOrgane() {
         return organe;
     }

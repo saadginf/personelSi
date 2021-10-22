@@ -12,7 +12,7 @@ public class Grade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull(message = "Champ Obligatoire")
-    private String labael;
+    private String label;
     
     public Grade() {
     }
@@ -22,10 +22,11 @@ public class Grade {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getLabael() {
-        return labael;
+    public String getLabel() {
+        return label;
     }
-    public void setLabael(String labael) {
-        this.labael = labael;
+    public void setLabel(String label) {
+        this.label = label;
     }
+    
 }
